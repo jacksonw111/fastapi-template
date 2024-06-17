@@ -15,6 +15,7 @@ from src.config import settings
 from src.extensions import Extensions
 from src.models.account import Account
 from src.web.setup import api as setup_api_router
+from src.web.auth import api as auth_api_router
 
 
 app = FastAPI(openapi_url=None)
@@ -138,3 +139,4 @@ async def account_validate_middleware(request: Request, call_next):
 
 
 app.include_router(setup_api_router, tags=["setup"])
+app.include_router(auth_api_router, tags=["auth"])
