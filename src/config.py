@@ -5,25 +5,24 @@ from pydantic_settings import BaseSettings
 
 class Setting(BaseSettings):
     # default admin
-    NAME: str = "newai"
-    EMAIL: EmailStr = "jacksonwen001@gmail.com"
-    PASSWORD: str = "newai!123"
-    EXP_DAYS: int = 30
-    ISS: str = "newai"
-    SUB: str = "Console API Passport"
+    NAME: str
+    EMAIL: EmailStr
+    PASSWORD: str
+    EXP_DAYS: int
+    ISS: str
+    SUB: str
 
     # to get a string like this run:
     # openssl rand -hex 32
-    SECRET_KEY: str = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
-    ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_DAYS: int = 30
+    SECRET_KEY: str
+    ALGORITHM: str
+    ACCESS_TOKEN_EXPIRE_DAYS: int
 
-    GEMINI_API_KEY: str = ""
     # POSTGRES
-    POSTGRES_SERVER: str = "localhost:5432"
-    POSTGRES_USER: str = "postgres"
-    POSTGRES_PASSWORD: str = "Test!123"
-    POSTGRES_DB: str = "screenflow"
+    POSTGRES_SERVER: str
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
+    POSTGRES_DB: str
     ASYNC_SQLALCHEMY_DATABASE_URI: Optional[PostgresDsn] = None
     SQLALCHEMY_POOL_SIZE: int = 50
     SQLALCHEMY_POOL_PRE_PING: bool = False
@@ -45,8 +44,8 @@ class Setting(BaseSettings):
         )
 
     # REDIS
-    REDIS_SERVER: str = "localhost:6379"
-    REDIS_PASSWORD: str = "Test!123"
+    REDIS_SERVER: str
+    REDIS_PASSWORD: str
     REDIS_DB: int = 0
     REDIS_URI: Optional[RedisDsn] = None
 
